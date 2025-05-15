@@ -20,7 +20,7 @@ model User {
   password String
   role String
   leaves Leave[]
-  attendance Attendance[] // Relation to Attendance
+  attendance Attendance[]
 }
 
 model Leave {
@@ -37,7 +37,7 @@ model Leave {
 model Attendance {
   id Int @id @default(autoincrement())
   userId Int
-  date DateTime @default(now()) 
+  date String 
   status String 
   createdAt DateTime @default(now())
   user User @relation(fields: [userId], references: [id])
